@@ -12,3 +12,5 @@
 # Outfit.create(name: "first outfit")
 # ItemCategory.create(item_id: 1, category_id: 1)
 # OutfitItem.create(item_id: 1, outfit_id: 1)
+
+#testing by Amy
