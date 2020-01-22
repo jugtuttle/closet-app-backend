@@ -12,3 +12,10 @@
 # Outfit.create(name: "first outfit")
 # ItemCategory.create(item_id: 1, category_id: 1)
 # OutfitItem.create(item_id: 1, outfit_id: 1)
+
+
+#Items 
+
+# Item.create(image_url: "https://www.patagonia.com/dis/dw/image/v2/ABBM_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwffe1226c/images/hi-res/84217_BLK.jpg?sw=750&sh=750&sm=fit&sfrm=png", name: "Black Jacket", times_worn: 0, user_id: 1, favorite: false)
+# Item.create(image_url: "https://img.cdn.mountainwarehouse.com/product/024307/024307_dka_featherweight_down_padded_jacket_men_ss19_2.jpg", name: "Green Jacket", times_worn: 0, user_id: 1, favorite: false)
+# Item.create(image_url: "https://lsco.scene7.com/is/image/lsco/levis/clothing/723340131-alt1-pdp.jpg?$regular_mobile$", name: "Denim Jacket", times_worn: 0, user_id: 1, favorite: false)
