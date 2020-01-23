@@ -13,6 +13,36 @@
 # ItemCategory.create(item_id: 1, category_id: 1)
 # OutfitItem.create(item_id: 1, outfit_id: 1)
 
+<<<<<<< HEAD
 #testing by Amy
 
 #test Jacob K 
+=======
+
+#Items 
+
+# Item.create(image_url: "https://www.patagonia.com/dis/dw/image/v2/ABBM_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwffe1226c/images/hi-res/84217_BLK.jpg?sw=750&sh=750&sm=fit&sfrm=png", name: "Black Jacket", times_worn: 0, user_id: 1, favorite: false)
+# Item.create(image_url: "https://img.cdn.mountainwarehouse.com/product/024307/024307_dka_featherweight_down_padded_jacket_men_ss19_2.jpg", name: "Green Jacket", times_worn: 0, user_id: 1, favorite: false)
+# Item.create(image_url: "https://lsco.scene7.com/is/image/lsco/levis/clothing/723340131-alt1-pdp.jpg?$regular_mobile$", name: "Denim Jacket", times_worn: 0, user_id: 1, favorite: false)
+
+
+
+
+# ItemCategory.create(item_id: 1, category_id: 2)
+# ItemCategory.create(item_id: 2, category_id: 2)
+# ItemCategory.create(item_id: 3, category_id: 2)
+
+# ItemCategory.create(item_id: 2, category_id: 3)
+# ItemCategory.create(item_id: 3, category_id: 3)
+
+##categories 
+# Category.create(name: "Shoes", group: "Clothing")
+# Category.create(name: "Tops", group: "Clothing")
+# Category.create(name: "Bottoms", group: "Clothing")
+# Category.create(name: "Jackets", group: "Clothing")
+# Category.create(name: "Dresses", group: "Clothing")
+# Category.create(name: "Bottoms", group: "Clothing")
+# Category.create(name: "Glasses", group: "Accessories")
+# Category.create(name: "Hats", group: "Accessories")
+
+>>>>>>> dev
