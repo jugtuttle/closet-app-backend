@@ -4,13 +4,13 @@ class ItemsController < ApplicationController
         render :json => @items 
     end
 
-    def new 
-        @item = Item.new
-    end 
+    # def new 
+    #     @item = Item.new
+    # end 
 
-    def edit 
-        @item = Item.find(params[:id])
-    end
+    # def edit 
+    #     @item = Item.find(params[:id])
+    # end
 
     def show 
         @item = Item.find(params[:id])
@@ -18,10 +18,15 @@ class ItemsController < ApplicationController
     
     def create 
         @item = Item.new(item_params)
-        if @item.create
+        cat_ids = params[:category_ids]
+        if @item.save
+            cat_ids.each do |cat|
+                @category = ItemCategory.new(category_id: cat, item_id: @item.id)
+                @category.save
+            end 
         render :json => @item 
         else 
-            NULL #### needs error handling 
+            NULL ## needs error handling
         end 
     end 
 
@@ -42,7 +47,8 @@ class ItemsController < ApplicationController
     private 
 
     def item_params
-        params.require(:item).permit(:image_url, :name, :times_worn, :favorite, :user_id)
+        # params[:item][:categories] || = []
+        params.require(:item).permit(:image_url, :name, :times_worn, :favorite, :user_id, category_ids: [])
     end
 
 end
