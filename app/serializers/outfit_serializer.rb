@@ -1,2 +1,3 @@
 class OutfitSerializer < ActiveModel::Serializer
-  attributes :id, :name, :items
+  attributes :id, :name, :items 
+end
