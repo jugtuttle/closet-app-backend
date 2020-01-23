@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
     def create 
         @item = Item.new(item_params)
         cat_ids = params[:category_ids]
+        # byebug
         if @item.save
             cat_ids.each do |cat|
                 @category = ItemCategory.new(category_id: cat, item_id: @item.id)
@@ -26,7 +27,7 @@ class ItemsController < ApplicationController
             end 
         render :json => @item 
         else 
-            NULL ## needs error handling
+            "NULL" ## needs error handling
         end 
     end 
 
