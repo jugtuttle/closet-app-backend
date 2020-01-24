@@ -61,7 +61,12 @@ class ItemsController < ApplicationController
     end 
 
     def destroy
+        # byebug
         @item = Item.find(params[:id])
+        @outfit_items = OutfitItem.where(item_id: @item)
+        @outfit_items.destroy_all
+        @item_categories = ItemCategory.where(item_id: @item)
+        @item_categories.destroy_all
         @item.destroy 
     end
 

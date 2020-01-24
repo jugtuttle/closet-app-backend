@@ -11,7 +11,8 @@ class OutfitItemsController < ApplicationController
     end
 
     def destroy
-        @outfit_item = OutfitItem.find_by(outfit_id: params[:outfit], item_id: params[:item])
+        @outfit_item = OutfitItem.find_by(outfit_id: params[:outfit_id], item_id: params[:item_id])
+        # byebug 
         @outfit_item.delete
     end
 end
