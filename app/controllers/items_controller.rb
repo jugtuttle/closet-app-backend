@@ -33,11 +33,31 @@ class ItemsController < ApplicationController
 
     def update 
         @item = Item.find(params[:id])
-        if @item.update 
-            render :json => @item 
+        # byebug
+        if params[:category_ids]
+            cat_ids = params[:category_ids]
+            @old_categories = ItemCategory.where(item_id: @item.id)
+            old_categories_ids = @old_categories.map {|c| c.category_id}
+            # byebug 
+            if @item.update(item_params)
+                old_categories_ids.each do |old_cat| 
+                    if !cat_ids.include?(old_cat)
+                        @cat_to_delete = ItemCategory.find_by(category_id: old_cat, item_id: @item.id)
+                        @cat_to_delete.destroy 
+                    end 
+                end 
+                @item.save 
+                render :json => @item 
+            else 
+                NULL #### needs error handling 
+            end
         else 
-            NULL #### needs error handling 
-        end
+            if @item.update(item_params)
+                render :json => @item 
+            else 
+                NULL #### needs error handling 
+            end 
+        end 
     end 
 
     def destroy
@@ -49,7 +69,7 @@ class ItemsController < ApplicationController
 
     def item_params
         # params[:item][:categories] || = []
-        params.require(:item).permit(:image_url, :name, :times_worn, :favorite, :user_id, category_ids: [])
+        params.require(:item).permit(:id, :image_url, :name, :times_worn, :favorite, :user_id, :categories, category_ids: [],)
     end
 
 end
